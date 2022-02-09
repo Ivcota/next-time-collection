@@ -67,7 +67,7 @@ const FinishedPage = () => {
   return (
     <AppContainer>
       <Head>
-        <title>You're Done</title>
+        <title>You&#39;re Done</title>
       </Head>
 
       <CenterComponent>
