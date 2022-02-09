@@ -13,7 +13,8 @@ const NamePage: NextPage = () => {
   const router = useRouter();
   const { month, setFirstName, setLastName } = useTimeSubmitStore();
   const formik = useFormik({
-    initialValues: {  const router = useRouter();
+    initialValues: {
+      firstName: "",
       lastName: "",
     },
     onSubmit: ({ firstName, lastName }) => {
