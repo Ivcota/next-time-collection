@@ -9,6 +9,9 @@ import { useRouter } from "next/router";
 import { collection, query, where } from "firebase/firestore";
 import { db } from "../../libs/firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { toast } from "react-hot-toast";
+import { errorToast } from "../../libs/customToast";
+import { successToast } from "./../../libs/customToast";
 
 const FieldServiceGroupPage = () => {
   const { congregation } = useTimeSubmitStore();
@@ -30,9 +33,10 @@ const FieldServiceGroupPage = () => {
     onSubmit: ({ fsGroup }) => {
       if (fsGroup !== "") {
         setFieldServiceGroup(fsGroup);
+        successToast("Saved");
         router.push("/submit/month");
       } else {
-        alert("Select A Group");
+        errorToast("Please select a field service group");
       }
     },
   });
