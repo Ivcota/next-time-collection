@@ -22,10 +22,11 @@ const NamePage: NextPage = () => {
         setFirstName(firstName);
         setLastName(lastName);
         successToast("Saved");
-        router.push("/");
+        router.push("/submit/hours");
       } else {
         errorToast("Please do not refresh the page");
         errorToast("Restart process.");
+        router.push("/");
       }
     },
   });
@@ -38,7 +39,7 @@ const NamePage: NextPage = () => {
 
       <form onSubmit={formik.handleSubmit}>
         <CenterComponent>
-          <h1>Name</h1>
+          <h1>Enter Name</h1>
           <input
             placeholder="First Name"
             className="input input--close"
