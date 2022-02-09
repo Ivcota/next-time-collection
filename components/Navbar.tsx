@@ -13,7 +13,9 @@ const Navbar = () => {
   return (
     <>
       <nav className={styles.navbar}>
-        <div className={styles.navbar__logo}>Time Submit</div>
+        <Link href="/">
+          <div className={styles.navbar__logo}>Time Submit</div>
+        </Link>
         <img
           onClick={() => setIsOpen(true)}
           src="https://img.icons8.com/material-outlined/24/ffffff/menu--v1.png"
