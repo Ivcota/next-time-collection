@@ -11,10 +11,11 @@ import { useTimeSubmitStore } from "../../libs/stores";
 import { db } from "./../../libs/firebase";
 import { useRouter } from "next/router";
 import { errorToast } from "../../libs/customToast";
+import { successToast } from "./../../libs/customToast";
 
 const MonthPage: NextPage = () => {
-  const { setMonth, month } = useTimeSubmitStore();
   const router = useRouter();
+  const { setMonth, month } = useTimeSubmitStore();
 
   const monthsRef = collection(db, "months");
   const q = query(monthsRef, orderBy("order", "asc"));
@@ -29,16 +30,13 @@ const MonthPage: NextPage = () => {
     onSubmit: ({ month }) => {
       if (month !== "") {
         setMonth(month);
+        successToast("Saved");
         router.push("/submit/first-name");
       } else {
         errorToast("Month not selected");
       }
     },
   });
-
-  useEffect(() => {
-    console.log(formik.values.month);
-  }, [formik.values.month]);
 
   return (
     <AppContainer>
@@ -58,7 +56,12 @@ const MonthPage: NextPage = () => {
             <option value="">Select Month</option>
 
             {months?.docs.map((doc) => {
-              return <option value={doc.id}> {doc.data().month} </option>;
+              return (
+                <option key={doc.id} value={doc.id}>
+                  {" "}
+                  {doc.data().month}{" "}
+                </option>
+              );
             })}
           </select>
 
