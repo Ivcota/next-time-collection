@@ -27,8 +27,6 @@ const SubmitCongregationPage = () => {
     <AppContainer>
       <Head>
         <title>Start Form</title>
-        <meta name="description" content="Submit time the easy way" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <form onSubmit={formik.handleSubmit}>
