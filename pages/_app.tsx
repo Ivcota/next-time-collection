@@ -13,7 +13,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           key={router.route}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ ease: "easeOut" }}
         >
           <Component {...pageProps} />
         </motion.div>

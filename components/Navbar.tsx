@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import styles from "../styles/Navbar.module.css";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,8 +32,8 @@ const Navbar = () => {
           src="https://img.icons8.com/ios/50/ffffff/xbox-x.png"
         />
 
-        <div className={styles["overlay-content"]}>
-          <Link href="/login">
+        <div onClick={closeOverlay} className={styles["overlay-content"]}>
+          <Link href="/">
             <a>Home</a>
           </Link>
           <Link href="/login">
