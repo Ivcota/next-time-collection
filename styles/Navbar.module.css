@@ -1,0 +1,39 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  align-items: center;
+}
+
+.navbar__logo {
+  font-size: larger;
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #07091fb6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay--hidden {
+  display: none;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 24px;
+}
+
+.icon {
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+}
