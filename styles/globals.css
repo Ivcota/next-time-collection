@@ -32,6 +32,11 @@ a {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  
+}
+
 #__next {
   display: flex;
   flex-direction: column;
