@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <CenterComponent>
           <h1>Time Submit</h1>
           <p>An easy way to submit time</p>
-          <PrimaryLink href="start">Start Now</PrimaryLink>
+          <PrimaryLink href="/submit/congregation">Start Now</PrimaryLink>
         </CenterComponent>
       </main>
     </AppContainer>
