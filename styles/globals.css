@@ -50,3 +50,12 @@ button {
   border-radius: 6px;
   font-family: var(--primary-font);
 }
+
+.input--close {
+ margin: 0;
+ margin-top: .5rem;
+}
+
+.input--bottom {
+  margin-bottom: 1rem;
+}

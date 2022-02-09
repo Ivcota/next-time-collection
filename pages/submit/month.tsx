@@ -15,7 +15,7 @@ import { successToast } from "./../../libs/customToast";
 
 const MonthPage: NextPage = () => {
   const router = useRouter();
-  const { setMonth, month } = useTimeSubmitStore();
+  const { setMonth, month, fieldServiceGroup } = useTimeSubmitStore();
 
   const monthsRef = collection(db, "months");
   const q = query(monthsRef, orderBy("order", "asc"));
@@ -28,10 +28,13 @@ const MonthPage: NextPage = () => {
       year: 2022,
     },
     onSubmit: ({ month }) => {
-      if (month !== "") {
+      if (month !== "" && fieldServiceGroup !== "") {
         setMonth(month);
         successToast("Saved");
-        router.push("/submit/first-name");
+        router.push("/submit/name");
+      } else if (fieldServiceGroup == "") {
+        errorToast("Restart process");
+        router.push("/submit/congregation");
       } else {
         errorToast("Month not selected");
       }
