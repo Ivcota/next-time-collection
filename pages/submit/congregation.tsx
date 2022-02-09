@@ -1,21 +1,25 @@
+import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
 import { useFormik } from "formik";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
+import { useCollection } from "react-firebase-hooks/firestore";
 import AppContainer from "../../components/AppContainer";
 import CenterComponent from "../../components/CenterComponent";
 import PrimaryButton from "../../components/PrimaryButton";
-import PrimaryLink from "../../components/PrimaryLink";
 import { useTimeSubmitStore } from "../../libs/stores";
+import { db } from "./../../libs/firebase";
 
 const SubmitCongregationPage = () => {
-  const router = useRouter();
+  const congregationsRef = collection(db, "congregations");
+  const [congregations, loading, error] = useCollection(congregationsRef);
 
+  const router = useRouter();
   const { setCongregation } = useTimeSubmitStore();
 
   const formik = useFormik({
     initialValues: {
-      congregation: "Casa Grande West",
+      congregation: "",
     },
     onSubmit: ({ congregation }) => {
       setCongregation(congregation);
@@ -39,7 +43,14 @@ const SubmitCongregationPage = () => {
               className="input"
               onChange={formik.handleChange}
             >
-              <option value="Casa Grande West">Casa Grande West</option>
+              <option value="">Select Congregation</option>;
+              {congregations?.docs.map((doc) => {
+                return (
+                  <option value={doc.id} key={doc.id}>
+                    {doc.data().name}
+                  </option>
+                );
+              })}
             </select>
 
             <PrimaryButton>Next</PrimaryButton>
