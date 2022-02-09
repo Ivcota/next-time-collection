@@ -1,8 +1,8 @@
-import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { useFormik } from "formik";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import AppContainer from "../../components/AppContainer";
 import CenterComponent from "../../components/CenterComponent";

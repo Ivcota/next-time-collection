@@ -6,18 +6,34 @@ import { useTimeSubmitStore } from "./../../libs/stores";
 import PrimaryButton from "../../components/PrimaryButton";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
+import { collection, query, where } from "firebase/firestore";
+import { db } from "../../libs/firebase";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 const FieldServiceGroupPage = () => {
+  const { congregation } = useTimeSubmitStore();
+
+  const fieldServiceGroupsRef = collection(db, "field-service-groups");
+  const q = query(
+    fieldServiceGroupsRef,
+    where("congregation", "==", congregation)
+  );
+  const [fieldServiceGroups, loading, error] = useCollection(q);
+
   const router = useRouter();
   const { setFieldServiceGroup } = useTimeSubmitStore();
 
   const formik = useFormik({
     initialValues: {
-      fsGroup: "Diles Group",
+      fsGroup: "",
     },
     onSubmit: ({ fsGroup }) => {
-      setFieldServiceGroup(fsGroup);
-      router.push("/submit/month");
+      if (fsGroup !== "") {
+        setFieldServiceGroup(fsGroup);
+        router.push("/submit/month");
+      } else {
+        alert("Select A Group");
+      }
     },
   });
 
@@ -34,8 +50,16 @@ const FieldServiceGroupPage = () => {
             name="fsGroup"
             placeholder="Field Service Group"
             className="input"
+            value={formik.values.fsGroup}
           >
-            <option value="Diles Group">Diles Group</option>
+            <option value="">Select Field Service Group</option>
+            {fieldServiceGroups?.docs.map((doc) => {
+              return (
+                <option key={doc.id} value={doc.id}>
+                  {doc.data().name}
+                </option>
+              );
+            })}
           </select>
           <PrimaryButton>Next</PrimaryButton>
         </CenterComponent>
