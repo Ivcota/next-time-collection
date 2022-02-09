@@ -1,4 +1,4 @@
-import create from "zustand/react";
+import create from "zustand";
 
 interface TimeSubmitState {
   congregation: string;
@@ -24,7 +24,7 @@ interface ITSSFunctions extends TimeSubmitState {
   resetTimeSubmitState: () => void;
 }
 
-const useTimeSubmitState = create<ITSSFunctions>((set) => {
+export const useTimeSubmitStore = create<ITSSFunctions>((set) => {
   return {
     firstName: "",
     lastName: "",
