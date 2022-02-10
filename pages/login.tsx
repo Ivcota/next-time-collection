@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import AppContainer from "../components/AppContainer";
@@ -8,8 +9,11 @@ import { auth } from "../libs/firebase";
 const LoginPage = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
+  const router = useRouter();
   useEffect(() => {
-    console.log(user);
+    if (user) {
+      router.push("/dashboard");
+    }
   }, [user]);
 
   return (
