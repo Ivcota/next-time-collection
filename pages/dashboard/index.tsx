@@ -28,7 +28,7 @@ const DashboardPage = () => {
             {user?.displayName?.split(" ")[0]}, what would you like to do?
           </p>
           <ListComponent>
-            <PrimaryLink href="/login"> Check Group's Time </PrimaryLink>
+            <PrimaryLink href="/login"> Check Group&#39;s Time </PrimaryLink>
             <PrimaryButton> Send Notifications </PrimaryButton>
             <PrimaryButton> Add or Remove Publishers </PrimaryButton>
             <PrimaryButton onClick={() => signOut(auth)}>Log Out</PrimaryButton>
