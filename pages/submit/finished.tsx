@@ -73,8 +73,7 @@ const FinishedPage = () => {
       <CenterComponent>
         <h1>Thank You Iverson!</h1>
         <p className={styles["short-text"]}>
-          Your time has been submitted, <br /> you can leave this page at any
-          time.
+          You can leave this page at any time.
         </p>
         <br />
       </CenterComponent>

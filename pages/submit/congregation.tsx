@@ -25,7 +25,6 @@ const SubmitCongregationPage = () => {
     onSubmit: ({ congregation }) => {
       if (congregation !== "") {
         setCongregation(congregation);
-        successToast("Saved");
         router.push("/submit/field-service-group");
       } else {
         errorToast("Please select a congregation");

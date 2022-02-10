@@ -9,7 +9,6 @@ import CenterComponent from "../../components/CenterComponent";
 import PrimaryButton from "../../components/PrimaryButton";
 import { errorToast } from "../../libs/customToast";
 import { db } from "../../libs/firebase";
-import { successToast } from "./../../libs/customToast";
 import { useTimeSubmitStore } from "./../../libs/stores";
 
 const FieldServiceGroupPage = () => {
@@ -32,7 +31,7 @@ const FieldServiceGroupPage = () => {
     onSubmit: ({ fsGroup }) => {
       if (fsGroup !== "") {
         setFieldServiceGroup(fsGroup);
-        successToast("Saved");
+
         router.push("/submit/month");
       } else {
         errorToast("Please select a field service group");

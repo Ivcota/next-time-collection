@@ -21,7 +21,6 @@ const NamePage: NextPage = () => {
       if (month !== "") {
         setFirstName(firstName);
         setLastName(lastName);
-        successToast("Saved");
         router.push("/submit/hours");
       } else {
         errorToast("Please do not refresh the page");

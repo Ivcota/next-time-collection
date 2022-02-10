@@ -10,7 +10,6 @@ import CenterComponent from "../../components/CenterComponent";
 import PrimaryButton from "../../components/PrimaryButton";
 import { errorToast } from "../../libs/customToast";
 import { useTimeSubmitStore } from "../../libs/stores";
-import { successToast } from "./../../libs/customToast";
 import { db } from "./../../libs/firebase";
 
 const MonthPage: NextPage = () => {
@@ -30,7 +29,6 @@ const MonthPage: NextPage = () => {
     onSubmit: ({ month }) => {
       if (month !== "" && fieldServiceGroup !== "") {
         setMonth(month);
-        successToast("Saved");
         router.push("/submit/name");
       } else if (fieldServiceGroup == "") {
         errorToast("Restart process");
