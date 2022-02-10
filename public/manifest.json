@@ -3,7 +3,7 @@
   "short_name": "Time Submit",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#FFFFFF",
+  "theme_color": "#374756",
   "background_color": "#374756",
   "start_url": "/",
   "icons": [
