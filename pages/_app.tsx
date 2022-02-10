@@ -14,12 +14,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <Navbar />
       <Toaster />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <motion.div
           key={router.route}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          // exit={{ opacity: 0, y: -20 }}
           transition={{ ease: "easeOut" }}
         >
           <Component {...pageProps} />
