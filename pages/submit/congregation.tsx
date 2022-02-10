@@ -4,7 +4,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { toast } from "react-hot-toast";
 import AppContainer from "../../components/AppContainer";
 import CenterComponent from "../../components/CenterComponent";
 import PrimaryButton from "../../components/PrimaryButton";

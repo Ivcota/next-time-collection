@@ -1,13 +1,13 @@
+import { doc, setDoc } from "firebase/firestore";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import AppContainer from "../../components/AppContainer";
 import CenterComponent from "../../components/CenterComponent";
 import styles from "../../styles/FinishedPage.module.css";
-import { useTimeSubmitStore } from "./../../libs/stores";
-import { useRouter } from "next/router";
-import { doc, setDoc } from "firebase/firestore";
 import { db } from "./../../libs/firebase";
-import { toast } from "react-hot-toast";
+import { useTimeSubmitStore } from "./../../libs/stores";
 
 const FinishedPage = () => {
   const {

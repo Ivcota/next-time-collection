@@ -5,7 +5,7 @@ import React from "react";
 import AppContainer from "../../components/AppContainer";
 import CenterComponent from "../../components/CenterComponent";
 import PrimaryButton from "../../components/PrimaryButton";
-import { errorToast, successToast } from "./../../libs/customToast";
+import { errorToast } from "./../../libs/customToast";
 import { useTimeSubmitStore } from "./../../libs/stores";
 
 const HoursPage = () => {

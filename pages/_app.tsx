@@ -1,10 +1,10 @@
-import "../styles/globals.css";
+import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
+import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Toaster } from "react-hot-toast";
-import { AnimatePresence, motion } from "framer-motion";
-import Head from "next/head";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (

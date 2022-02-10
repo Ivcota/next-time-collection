@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import AppContainer from "../components/AppContainer";
 import CenterComponent from "../components/CenterComponent";
 import PrimaryButton from "../components/PrimaryButton";
 import { auth } from "../libs/firebase";
-import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 const LoginPage = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);

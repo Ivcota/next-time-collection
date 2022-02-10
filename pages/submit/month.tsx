@@ -2,16 +2,16 @@ import { collection, orderBy, query } from "firebase/firestore";
 import { useFormik } from "formik";
 import { NextPage } from "next";
 import Head from "next/head";
-import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+import React from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import AppContainer from "../../components/AppContainer";
 import CenterComponent from "../../components/CenterComponent";
 import PrimaryButton from "../../components/PrimaryButton";
-import { useTimeSubmitStore } from "../../libs/stores";
-import { db } from "./../../libs/firebase";
-import { useRouter } from "next/router";
 import { errorToast } from "../../libs/customToast";
+import { useTimeSubmitStore } from "../../libs/stores";
 import { successToast } from "./../../libs/customToast";
+import { db } from "./../../libs/firebase";
 
 const MonthPage: NextPage = () => {
   const router = useRouter();
