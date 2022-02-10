@@ -27,8 +27,6 @@ const HoursPage = () => {
         setHours(hours);
         setPlacements(placements);
         setVideos(videos);
-        successToast("You're done!");
-        successToast("Saved");
         router.push("/submit/finished");
       } else {
         errorToast("Please do not refresh the page");
