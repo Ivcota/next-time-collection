@@ -4,10 +4,14 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Toaster } from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+      </Head>
       <Navbar />
       <Toaster />
       <AnimatePresence exitBeforeEnter>
