@@ -17,9 +17,8 @@ const DashboardPage = () => {
         <div className={styles["center-items"]}>
           <h1 className={styles.title}>Dashboard</h1>
           <p className={styles["text-content"]}>
-            {user?.displayName?.split(" ")[0]}, welcome to the dashboard. This
-            page does not have any functionality at the moment. Feel free to
-            logout below.
+            Welcome {user?.displayName} to the dashboard. This page does not
+            have any functionality at the moment. Feel free to logout below.
           </p>
           <PrimaryButton onClick={() => signOut(auth)}> Log Out </PrimaryButton>
         </div>
