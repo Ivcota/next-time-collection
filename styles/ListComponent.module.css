@@ -1,0 +1,5 @@
+.list-component {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
