@@ -58,3 +58,7 @@ button {
 .input--bottom {
   margin-bottom: 1rem;
 }
+
+.spacer {
+  margin-top: 0.5rem;
+}
