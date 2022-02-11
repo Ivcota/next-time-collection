@@ -11,7 +11,10 @@ import { db } from "../../../libs/firebase";
 const PublisherByIdPage: NextPage = () => {
   const { query } = useRouter();
   const collectionRef = collection(db, "field-service-groups");
-  const q = qpop(collectionRef, where("overseerAccountId", "==", query.userId));
+  const q = qpop(
+    collectionRef,
+    where("overseerAccountId", "==", query.userId || "")
+  );
   const [groups, loading, error] = useCollection(q);
 
   return (

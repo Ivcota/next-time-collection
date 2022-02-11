@@ -37,3 +37,4 @@ yarn-error.log*
 *.tsbuildinfo
 public/sw.js.map
 *.log
+public/sw.js.map
