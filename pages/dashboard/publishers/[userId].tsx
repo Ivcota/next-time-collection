@@ -22,7 +22,7 @@ const PublisherByIdPage: NextPage = () => {
           ? Object.entries(groups?.docs[0].get("publishers")).map(
               ([key, value]) => {
                 return (
-                  <div className="spacer">
+                  <div key={key} className="spacer">
                     <PublisherComponent
                       key={key}
                       fireBaseKey={key}
