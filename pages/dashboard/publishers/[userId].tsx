@@ -21,21 +21,13 @@ const PublisherByIdPage: NextPage = () => {
     <AuthCheck>
       <AppContainer>
         <h1>Publishers</h1>
-        {groups
-          ? Object.entries(groups?.docs[0].get("publishers")).map(
-              ([key, value]) => {
-                return (
-                  <div key={key} className="spacer">
-                    <PublisherComponent
-                      key={key}
-                      fireBaseKey={key}
-                      publisher={value}
-                    />
-                  </div>
-                );
-              }
-            )
-          : null}
+        {(groups?.docs[0].get("publishers") as []).map((doc: any) => {
+          return (
+            <div key={doc.id} className="spacer">
+              <PublisherComponent fireBaseKey={doc.id} publisher={doc} />
+            </div>
+          );
+        })}
       </AppContainer>
     </AuthCheck>
   );

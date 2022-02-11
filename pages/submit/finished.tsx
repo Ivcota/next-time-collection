@@ -71,7 +71,7 @@ const FinishedPage = () => {
       </Head>
 
       <CenterComponent>
-        <h1>Thank You Iverson!</h1>
+        <h1>Thank You {firstName}!</h1>
         <p className={styles["short-text"]}>
           You can leave this page at any time.
         </p>
