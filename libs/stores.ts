@@ -10,6 +10,8 @@ interface TimeSubmitState {
   videos: number;
   placements: number;
   comments: string;
+  bibleStudies: number;
+  returnVisits: number;
 }
 
 interface ITSSFunctions extends TimeSubmitState {
@@ -21,6 +23,8 @@ interface ITSSFunctions extends TimeSubmitState {
   setPlacements: (placements: number) => void;
   setVideos: (videos: number) => void;
   setCongregation: (name: string) => void;
+  setBibleStudies: (studies: number) => void;
+  setReturnVisits: (returnVisits: number) => void;
   resetTimeSubmitState: () => void;
 }
 
@@ -35,6 +39,8 @@ export const useTimeSubmitStore = create<ITSSFunctions>((set) => {
     videos: 0,
     month: "",
     comments: "",
+    bibleStudies: 0,
+    returnVisits: 0,
     setFirstName: (name) => {
       set({
         firstName: name,
@@ -66,6 +72,12 @@ export const useTimeSubmitStore = create<ITSSFunctions>((set) => {
     },
     setPlacements: (placements) => {
       set({ placements });
+    },
+    setBibleStudies: (studies) => {
+      set({ bibleStudies: studies });
+    },
+    setReturnVisits: (returnVisits) => {
+      set({ returnVisits: returnVisits });
     },
     resetTimeSubmitState: () => {
       set({

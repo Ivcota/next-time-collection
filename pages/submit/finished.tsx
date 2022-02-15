@@ -18,6 +18,8 @@ const FinishedPage = () => {
     placements,
     congregation,
     videos,
+    bibleStudies,
+    returnVisits,
     fieldServiceGroup,
   } = useTimeSubmitStore();
 
@@ -40,6 +42,8 @@ const FinishedPage = () => {
           videos,
           fieldServiceGroup,
           congregation,
+          bibleStudies,
+          returnVisits,
         }
       ),
       {

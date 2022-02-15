@@ -15,17 +15,23 @@ const HoursPage = () => {
     setPlacements,
     setVideos,
     firstName,
+    setBibleStudies,
+    setReturnVisits,
   } = useTimeSubmitStore();
   const formik = useFormik({
     initialValues: {
       hours: 0,
       videos: 0,
       placements: 0,
+      bibleStudies: 0,
+      returnVisits: 0,
     },
-    onSubmit: ({ hours, placements, videos }) => {
+    onSubmit: ({ hours, placements, videos, bibleStudies, returnVisits }) => {
       if (firstName !== "") {
         setHours(hours);
         setPlacements(placements);
+        setBibleStudies(bibleStudies);
+        setReturnVisits(returnVisits);
         setVideos(videos);
         router.push("/submit/finished");
       } else {
@@ -61,6 +67,24 @@ const HoursPage = () => {
             onChange={formik.handleChange}
             autoComplete="off"
             name="placements"
+            type="number"
+            required={true}
+          />
+          <input
+            placeholder="Bible Studies"
+            className="input input--close"
+            onChange={formik.handleChange}
+            autoComplete="off"
+            name="bibleStudies"
+            type="number"
+            required={true}
+          />
+          <input
+            placeholder="Return Visits"
+            className="input input--close"
+            onChange={formik.handleChange}
+            autoComplete="off"
+            name="returnVisits"
             type="number"
             required={true}
           />
